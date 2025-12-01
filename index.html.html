@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Читы для Rust | Татарин2.0</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(108, 99, 255, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 101, 132, 0.03) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #6c63ff;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, #6c63ff, #ff6584);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: #a0a0d8;
+            font-size: 0.9rem;
+        }
+        
+        .header-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .discord-link, .telegram-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .discord-link {
+            background: linear-gradient(90deg, #5865F2, #4752c4);
+            box-shadow: 0 4px 10px rgba(88, 101, 242, 0.3);
+        }
+        
+        .telegram-link {
+            background: linear-gradient(90deg, #2AABEE, #229ED9);
+            box-shadow: 0 4px 10px rgba(42, 171, 238, 0.3);
+        }
+        
+        .discord-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(88, 101, 242, 0.5);
+            background: linear-gradient(90deg, #4752c4, #5865F2);
+        }
+        
+        .telegram-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(42, 171, 238, 0.5);
+            background: linear-gradient(90deg, #229ED9, #2AABEE);
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+        }
+        
+        /* Hero section */
+        .hero {
+            padding: 80px 0;
+            background: radial-gradient(circle at 20% 50%, rgba(108, 99, 255, 0.1) 0%, transparent 50%);
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #6c63ff, #ff6584);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #c0c0e0;
+        }
+        
+        .highlight {
+            color: #6c63ff;
+            font-weight: bold;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .hero-buttons .discord-link,
+        .hero-buttons .telegram-link {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            min-width: 200px;
+            justify-content: center;
+        }
+        
+        /* Software section */
+        .software {
+            padding: 80px 0;
+            background-color: rgba(10, 10, 30, 0.8);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #6c63ff;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #6c63ff, #ff6584);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .software-card {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            text-align: center;
+            position: relative;
+        }
+        
+        .software-card.steam-card {
+            background: linear-gradient(145deg, #a83232, #7a2525);
+            border-color: rgba(255, 65, 65, 0.3);
+        }
+        
+        .software-card.steam-card .software-icon {
+            color: #ff4d4d;
+        }
+        
+        .software-card.alkad-card {
+            background: linear-gradient(145deg, #324ca8, #25367a);
+            border-color: rgba(65, 105, 255, 0.3);
+        }
+        
+        .software-card.alkad-card .software-icon {
+            color: #4d6bff;
+        }
+        
+        .software-card.new-card {
+            background: linear-gradient(145deg, #32a852, #257a36);
+            border-color: rgba(65, 255, 105, 0.3);
+        }
+        
+        .software-card.new-card .software-icon {
+            color: #4dff6b;
+        }
+        
+        .software-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(108, 99, 255, 0.5);
+        }
+        
+        .software-card.steam-card:hover {
+            border-color: rgba(255, 65, 65, 0.7);
+            box-shadow: 0 15px 30px rgba(168, 50, 50, 0.3);
+        }
+        
+        .software-card.alkad-card:hover {
+            border-color: rgba(65, 105, 255, 0.7);
+            box-shadow: 0 15px 30px rgba(50, 76, 168, 0.3);
+        }
+        
+        .software-card.new-card:hover {
+            border-color: rgba(65, 255, 105, 0.7);
+            box-shadow: 0 15px 30px rgba(50, 168, 82, 0.3);
+        }
+        
+        .software-icon {
+            font-size: 3rem;
+            color: #6c63ff;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .software-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: rgba(108, 99, 255, 0.2);
+            color: #a0a0d8;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .software-card p {
+            color: #a0a0d8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            min-height: 60px;
+        }
+        
+        .software-features {
+            list-style-type: none;
+            text-align: left;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .software-features li {
+            padding: 8px 0;
+            color: #c0c0e0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .software-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .software-features li i {
+            color: #6c63ff;
+            margin-right: 10px;
+        }
+        
+        .steam-card .software-features li i {
+            color: #ff4d4d;
+        }
+        
+        .alkad-card .software-features li i {
+            color: #4d6bff;
+        }
+        
+        .new-card .software-features li i {
+            color: #4dff6b;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .price-container {
+            text-align: left;
+        }
+        
+        .price-label {
+            color: #8888cc;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+        
+        .price-note {
+            font-size: 0.85rem;
+            color: #ffa726;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .status-online {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            border: 1px solid #2ecc71;
+        }
+        
+        .status-offline {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+        
+        .status-updating {
+            background-color: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+            border: 1px solid #f1c40f;
+        }
+        
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            background: linear-gradient(90deg, #6c63ff, #ff6584);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .buy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+        
+        /* Filters */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background: rgba(26, 26, 46, 0.7);
+            color: #c0c0e0;
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .filter-btn:hover {
+            background: rgba(108, 99, 255, 0.2);
+            color: #f0f0f0;
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(90deg, #6c63ff, #ff6584);
+            color: white;
+            border-color: transparent;
+        }
+        
+        /* Кнопка обновления */
+        .update-btn {
+            display: block;
+            margin: 20px auto 40px;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #32a852, #257a36);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .update-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(50, 168, 82, 0.3);
+        }
+        
+        .update-btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Индикатор загрузки */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+        }
+        
+        .spinner {
+            border: 5px solid rgba(108, 99, 255, 0.3);
+            border-top: 5px solid #6c63ff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Info section */
+        .info {
+            padding: 80px 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255, 101, 132, 0.1) 0%, transparent 50%);
+        }
+        
+        .info-text {
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        .info-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff6584;
+        }
+        
+        .info-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #c0c0e0;
+        }
+        
+        .warning {
+            background: rgba(255, 101, 132, 0.1);
+            border-left: 4px solid #ff6584;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px auto;
+            max-width: 700px;
+            text-align: left;
+        }
+        
+        .warning h4 {
+            color: #ff6584;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .social-cta {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 15px;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto 0;
+        }
+        
+        .social-cta h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #6c63ff;
+        }
+        
+        .social-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #c0c0e0;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-buttons .discord-link,
+        .cta-buttons .telegram-link {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0a0a1a;
+            padding: 40px 0;
+            border-top: 1px solid rgba(108, 99, 255, 0.2);
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            color: #6c63ff;
+            font-weight: bold;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #a0a0d8;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: rgba(108, 99, 255, 0.1);
+            color: #f0f0f0;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: #a0a0d8;
+            font-size: 0.9rem;
+        }
+        
+        .year-2025 {
+            color: #6c63ff;
+            font-weight: bold;
+        }
+        
+        .made-by {
+            color: #8888cc;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        
+        /* Статистика */
+        .stats {
+            text-align: center;
+            color: #a0a0d8;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(108, 99, 255, 0.05);
+            border-radius: 5px;
+            grid-column: 1 / -1;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .hero-text h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .discord-link,
+            .hero-buttons .telegram-link {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .discord-link,
+            .cta-buttons .telegram-link {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .software-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .header-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .software-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .price-container {
+                text-align: center;
+            }
+            
+            .filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .discord-link, .telegram-link {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons .discord-link,
+            .hero-buttons .telegram-link {
+                padding: 12px 25px;
+                min-width: auto;
+            }
+            
+            .cta-buttons .discord-link,
+            .cta-buttons .telegram-link {
+                padding: 12px 25px;
+                min-width: auto;
+            }
+            
+            .software-card {
+                padding: 20px;
+            }
+            
+            .software-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Читы от Татарин2.0</h1>
+                        <span>Профессиональные читы для игры Rust</span>
+                    </div>
+                </div>
+                <div class="header-links">
+                    <a href="https://discord.gg/s8g5AXpsf8" target="_blank" class="discord-link">
+                        <i class="fab fa-discord social-icon"></i>
+                        <span>Discord</span>
+                    </a>
+                    <a href="https://t.me/+Vy1Izc1gq2M2OWMy" target="_blank" class="telegram-link">
+                        <i class="fab fa-telegram social-icon"></i>
+                        <span>Telegram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Читы для Rust от Татарин2.0</h2>
+                    <p>Профессиональные решения для игры Rust. <span class="highlight">Уникальные читы Татарин2.0</span> с максимальной стабильностью и безопасностью.</p>
+                    <p>Все читы проходят регулярное обновление и тестирование. Присоединяйтесь к нашему Discord серверу для получения поддержки и актуальной информации.</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="https://discord.gg/s8g5AXpsf8" target="_blank" class="discord-link">
+                        <i class="fab fa-discord social-icon"></i>
+                        <span>Discord сервер</span>
+                    </a>
+                    <a href="https://t.me/+Vy1Izc1gq2M2OWMy" target="_blank" class="telegram-link">
+                        <i class="fab fa-telegram social-icon"></i>
+                        <span>Telegram канал</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Section -->
+    <section class="software">
+        <div class="container">
+            <h2 class="section-title">Доступные читы</h2>
+            
+            <!-- Фильтры -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Все читы</button>
+                <button class="filter-btn" data-filter="alkad">Rust Alkad</button>
+                <button class="filter-btn" data-filter="steam">Rust Steam</button>
+                <button class="filter-btn" data-filter="online">В наличии</button>
+            </div>
+            
+            <!-- Индикатор загрузки -->
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Загрузка списка читов...</p>
+            </div>
+            
+            <!-- Контейнер для читов -->
+            <div id="cheats-container" class="software-grid">
+                <!-- Читы будут добавлены через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info">
+        <div class="container">
+            <div class="info-content">
+                <div class="info-text">
+                    <h3>Почему выбирают Татарин2.0?</h3>
+                    <p>Татарин2.0 - это проверенные временем читы для Rust, которые отличаются стабильностью, безопасностью и регулярными обновлениями.</p>
+                    
+                    <div class="warning">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Важная информация</h4>
+                        <p>Использование читов может привести к блокировке аккаунта. Мы не несем ответственности за последствия использования нашего ПО. Все вопросы по ценам и приобретению уточняйте в нашем Discord сервере.</p>
+                    </div>
+                    
+                    <p>Все читы Татарин2.0 проходят тщательное тестирование на отсутствие вредоносного кода и совместимость с последними версиями игры.</p>
+                </div>
+                
+                <div class="social-cta">
+                    <h3>Присоединяйтесь к нашему Discord серверу!</h3>
+                    <p>В нашем Discord сервере вы найдете актуальные версии читов, инструкции по установке, получите техническую поддержку и общение с другими пользователями. Все вопросы по ценам и приобретению решаются только через Discord.</p>
+                    <div class="cta-buttons">
+                        <a href="https://discord.gg/s8g5AXpsf8" target="_blank" class="discord-link">
+                            <i class="fab fa-discord social-icon"></i>
+                            <span>Discord сервер</span>
+                        </a>
+                        <a href="https://t.me/+Vy1Izc1gq2M2OWMy" target="_blank" class="telegram-link">
+                            <i class="fab fa-telegram social-icon"></i>
+                            <span>Telegram канал</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Читы от Татарин2.0</div>
+                <div class="footer-social">
+                    <a href="https://discord.gg/s8g5AXpsf8" target="_blank">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                    <a href="https://t.me/+Vy1Izc1gq2M2OWMy" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                </div>
+                <div class="copyright">
+                    &copy; <span class="year-2025">2025</span> Читы от Татарин2.0. Все права защищены.
+                </div>
+                <div class="made-by">
+                    Сделано FortDen
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Данные о читах
+        const CHEATS_DATA = [
+            {
+                id: 1,
+                name: "Чит Rust ESP",
+                description: "Базовый чит с ESP функциями для Rust. Включает подсветку игроков, NPC, лута и объектов.",
+                version: "v2.5.1",
+                status: "online",
+                price: "1500 руб",
+                priceNote: "Цену уточняйте в Discord",
+                features: [
+                    "ESP игроков (имя, здоровье, дистанция)",
+                    "ESP NPC и животных",
+                    "ESP лута и ресурсов",
+                    "Радар с мини-картой",
+                    "Подсветка через стены",
+                    "Низкое потребление ресурсов",
+                    "Простое управление (F1 меню)"
+                ],
+                category: "steam",
+                icon: "eye",
+                buyLink: "https://discord.gg/s8g5AXpsf8"
+            },
+            {
+                id: 2,
+                name: "Чит Rust Aimbot",
+                description: "Чит с умным Aimbot'ом и дополнительными функциями для профессиональной игры.",
+                version: "v3.2.0",
+                status: "online",
+                price: "2000 руб",
+                priceNote: "Цену уточняйте в Discord",
+                features: [
+                    "Умный Aimbot с настройкой FOV",
+                    "Авто-стрельба по видимым целям",
+                    "Контроль отдачи (No Recoil)",
+                    "Быстрая стрельба (Rapid Fire)",
+                    "Триггер-бот",
+                    "Настройка чувствительности",
+                    "Поддержка всех видов оружия"
+                ],
+                category: "steam",
+                icon: "crosshairs",
+                buyLink: "https://discord.gg/s8g5AXpsf8"
+            },
+            {
+                id: 3,
+                name: "Чит Rust Alkad",
+                description: "Специальная версия чита для Rust Alkad с оптимизированным функционалом.",
+                version: "v2.8.3",
+                status: "online",
+                price: "1800 руб",
+                priceNote: "Цену уточняйте в Discord",
+                features: [
+                    "ESP для Alkad версии",
+                    "Подсветка игроков Alkad",
+                    "Радар с картой сервера",
+                    "Информация об игроках",
+                    "Стабильная работа на Alkad",
+                    "Регулярные обновления",
+                    "Поддержка Windows 10/11"
+                ],
+                category: "alkad",
+                icon: "shield",
+                buyLink: "https://discord.gg/s8g5AXpsf8"
+            },
+            {
+                id: 4,
+                name: "Чит Rust Premium",
+                description: "Премиум версия со всеми функциями. Максимальный функционал для профессиональных игроков.",
+                version: "v4.1.5",
+                status: "online",
+                price: "2500 руб",
+                priceNote: "Цену уточняйте в Discord",
+                features: [
+                    "Все функции ESP и Aimbot",
+                    "Wallhack с чистыми текстурами",
+                    "No Spread (без разброса)",
+                    "Speed Hack (ускорение)",
+                    "Fly Hack (полеты)",
+                    "Защита от обнаружения",
+                    "Приоритетная поддержка"
+                ],
+                category: "steam",
+                icon: "crown",
+                buyLink: "https://discord.gg/s8g5AXpsf8"
+            },
+            {
+                id: 5,
+                name: "Чит Rust Lite",
+                description: "Облегченная версия чита для слабых ПК. Минимальное потребление ресурсов.",
+                version: "v1.9.2",
+                status: "online",
+                price: "1200 руб",
+                priceNote: "Цену уточняйте в Discord",
+                features: [
+                    "Базовый ESP",
+                    "Простой радар",
+                    "Минимальное потребление CPU",
+                    "Работа от 4GB RAM",
+                    "Стабильность на слабых ПК",
+                    "Простая установка",
+                    "Базовая поддержка"
+                ],
+                category: "steam",
+                icon: "bolt",
+                buyLink: "https://discord.gg/s8g5AXpsf8"
+            },
+            {
+                id: 6,
+                name: "Чит Rust No-Steam ESP",
+                description: "Специальная версия для No-Steam Rust. Оптимизирована для неофициальных версий игры.",
+                version: "v2.3.7",
+                status: "online",
+                price: "1600 руб",
+                priceNote: "Цену уточняйте в Discord",
+                features: [
+                    "ESP для No-Steam версий",
+                    "Работа на пиратских копиях",
+                    "Поддержка всех сборок",
+                    "Стабильность на No-Steam",
+                    "Регулярные обновления под сборки",
+                    "Простая интеграция",
+                    "Техподдержка No-Steam"
+                ],
+                category: "alkad",
+                icon: "gamepad",
+                buyLink: "https://discord.gg/s8g5AXpsf8"
+            }
+        ];
+
+        // Данные о читах
+        let cheats = [];
+        
+        // Кэш для хранения данных
+        const CACHE_KEY = 'tatarin-cheats-cache';
+        const CACHE_TIMESTAMP_KEY = 'tatarin-cheats-timestamp';
+        const CACHE_DURATION = 30 * 60 * 1000; // 30 минут
+        
+        // Сохранить данные в кэш
+        function saveToCache(data) {
+            try {
+                localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+                localStorage.setItem(CACHE_TIMESTAMP_KEY, Date.now().toString());
+                console.log('Данные сохранены в кэш');
+            } catch (e) {
+                console.warn('Ошибка сохранения в кэш:', e);
+            }
+        }
+        
+        // Получить данные из кэша
+        function getFromCache() {
+            try {
+                const timestamp = localStorage.getItem(CACHE_TIMESTAMP_KEY);
+                if (!timestamp) return null;
+                
+                const age = Date.now() - parseInt(timestamp);
+                if (age > CACHE_DURATION) {
+                    console.log('Кэш устарел, возраст:', age, 'мс');
+                    return null;
+                }
+                
+                const cachedData = localStorage.getItem(CACHE_KEY);
+                if (cachedData) {
+                    console.log('Данные загружены из кэша');
+                    return JSON.parse(cachedData);
+                }
+            } catch (e) {
+                console.warn('Ошибка чтения из кэша:', e);
+            }
+            return null;
+        }
+        
+        // Загрузка данных
+        async function fetchCheatsData() {
+            const loading = document.getElementById('loading');
+            
+            try {
+                loading.style.display = 'flex';
+                
+                console.log('Загрузка списка читов...');
+                
+                // Используем локальные данные
+                const allCheats = JSON.parse(JSON.stringify(CHEATS_DATA));
+                
+                console.log('Загружено:', allCheats.length, 'читов Татарин2.0');
+                
+                // Сохраняем в кэш
+                saveToCache(allCheats);
+                
+                loading.style.display = 'none';
+                
+                return allCheats;
+                
+            } catch (error) {
+                console.error('Ошибка при загрузке:', error);
+                
+                // Пробуем загрузить из кэша
+                const cachedData = getFromCache();
+                if (cachedData) {
+                    console.log('Используем данные из кэша');
+                    loading.style.display = 'none';
+                    return cachedData;
+                }
+                
+                // Если кэша нет, используем локальные данные
+                console.log('Используем локальные данные Татарин2.0');
+                loading.style.display = 'none';
+                
+                return JSON.parse(JSON.stringify(CHEATS_DATA));
+            }
+        }
+        
+        // Создание карточки чита
+        function createCheatCard(cheat) {
+            const card = document.createElement('div');
+            card.className = `software-card ${cheat.category}-card`;
+            card.dataset.id = cheat.id;
+            
+            // Определение иконки
+            const iconMap = {
+                'eye': 'fa-eye',
+                'crosshairs': 'fa-crosshairs',
+                'shield': 'fa-shield-alt',
+                'bolt': 'fa-bolt',
+                'cogs': 'fa-cogs',
+                'gamepad': 'fa-gamepad',
+                'robot': 'fa-robot',
+                'magic': 'fa-magic',
+                'user-secret': 'fa-user-secret',
+                'crown': 'fa-crown'
+            };
+            const iconClass = iconMap[cheat.icon] || 'fa-eye';
+            
+            // Определение класса статуса
+            let statusClass = 'status-online';
+            let statusText = 'В наличии';
+            if (cheat.status === 'offline') {
+                statusClass = 'status-offline';
+                statusText = 'Нет в наличии';
+            }
+            if (cheat.status === 'updating') {
+                statusClass = 'status-updating';
+                statusText = 'Обновляется';
+            }
+            
+            // Создание HTML для карточки
+            card.innerHTML = `
+                <div class="software-icon">
+                    <i class="fas ${iconClass}"></i>
+                </div>
+                <h3>${cheat.name}</h3>
+                <div class="version-badge">${cheat.version}</div>
+                <p>${cheat.description}</p>
+                
+                <ul class="software-features">
+                    ${cheat.features.map(feature => `<li><i class="fas fa-check"></i>${feature}</li>`).join('')}
+                </ul>
+                
+                <div class="card-footer">
+                    <div class="price-container">
+                        <div class="price-label">Примерная цена:</div>
+                        <div class="price">${cheat.price}</div>
+                        ${cheat.priceNote ? `<div class="price-note">${cheat.priceNote}</div>` : ''}
+                    </div>
+                    <div class="status-badge ${statusClass}">
+                        <i class="fas fa-circle"></i> ${statusText}
+                    </div>
+                </div>
+                
+                <a href="${cheat.buyLink}" target="_blank" class="buy-button">
+                    <i class="fas fa-shopping-cart"></i> Купить в Discord
+                </a>
+            `;
+            
+            return card;
+        }
+        
+        // Отображение читов
+        function displayCheats(cheatsToDisplay) {
+            const container = document.getElementById('cheats-container');
+            
+            if (cheatsToDisplay.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 50px; color: #ff6584; grid-column: 1 / -1;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 20px;"></i>
+                        <p>Читы временно недоступны</p>
+                        <p style="color: #a0a0d8; font-size: 0.9rem; margin-top: 10px;">
+                            Присоединяйтесь к нашему Discord серверу для получения информации
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            cheatsToDisplay.forEach(cheat => {
+                const card = createCheatCard(cheat);
+                container.appendChild(card);
+            });
+            
+            // Показываем статистику
+            const stats = document.createElement('div');
+            stats.className = 'stats';
+            const totalCheats = cheatsToDisplay.length;
+            const onlineCheats = cheatsToDisplay.filter(c => c.status === 'online').length;
+            
+            stats.innerHTML = `
+                <i class="fas fa-info-circle" style="color: #6c63ff; margin-right: 5px;"></i>
+                Показано ${totalCheats} читов Татарин2.0 (${onlineCheats} в наличии)
+                <br><small style="color: #888;">Все цены уточняйте в Discord сервере • ${new Date().toLocaleDateString('ru-RU')}</small>
+            `;
+            
+            container.appendChild(stats);
+        }
+        
+        // Фильтрация читов
+        function filterCheats(filter) {
+            if (filter === 'all') return cheats;
+            if (filter === 'online') return cheats.filter(cheat => cheat.status === 'online');
+            return cheats.filter(cheat => cheat.category === filter);
+        }
+        
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Сначала проверяем кэш
+            const cachedCheats = getFromCache();
+            if (cachedCheats) {
+                cheats = cachedCheats;
+                displayCheats(cheats);
+            } else {
+                // Загружаем читы
+                cheats = await fetchCheatsData();
+                displayCheats(cheats);
+            }
+            
+            // Настройка фильтров
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Удаляем активный класс у всех кнопок
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+                    
+                    // Фильтруем и отображаем читы
+                    const filter = this.dataset.filter;
+                    const filteredCheats = filterCheats(filter);
+                    displayCheats(filteredCheats);
+                });
+            });
+            
+            // Анимация при наведении на кнопки
+            const socialButtons = document.querySelectorAll('.discord-link, .telegram-link, .buy-button');
+            socialButtons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    if (!this.disabled) {
+                        this.style.transform = 'translateY(-3px)';
+                    }
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Установка текущего года
+            document.querySelector('.year-2025').textContent = new Date().getFullYear();
+            
+            // Автоматическое обновление каждые 10 минут
+            setInterval(async () => {
+                const newCheats = await fetchCheatsData();
+                if (newCheats.length !== cheats.length) {
+                    cheats = newCheats;
+                    const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+                    const filteredCheats = filterCheats(activeFilter);
+                    displayCheats(filteredCheats);
+                    console.log('Автоматически обновлено:', newCheats.length, 'читов');
+                }
+            }, 10 * 60 * 1000);
+        });
+    </script>
+</body>
+</html>
